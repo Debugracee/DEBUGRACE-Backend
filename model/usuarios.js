@@ -26,8 +26,12 @@ const Usuario = db.define('usuarios', {
         allowNull: false
     },
     senha: {
-        type: Sequelize.DataTypes.STRING(45),
+        type: Sequelize.DataTypes.STRING,
         allowNull: false
+    },
+    statusLogin: {
+        type: Sequelize.DataTypes.BOOLEAN,
+        defaultValue: false
     }
 
 });
