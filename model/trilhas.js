@@ -11,18 +11,23 @@ const Trilhas = db.define('trilhas', {
         primaryKey: true
     },
 
-    titulo: {
+    trilha: {
         type: Sequelize.DataTypes.STRING,
-        allowNull: false
-    },
-
-    descricao: {
-        type: Sequelize.DataTypes.TEXT('long'),
         allowNull: false
     },
 
     conteudo: {
         type: Sequelize.DataTypes.STRING,
+        allowNull: false
+    },
+
+    descConteudo: {
+        type: Sequelize.DataTypes.TEXT('long'),
+        allowNull: false
+    },
+
+    linkConteudo: {
+        type: Sequelize.DataTypes.TEXT('long'),
         allowNull: false
     }
 });
