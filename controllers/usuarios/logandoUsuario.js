@@ -38,6 +38,7 @@ const logandoUsuarioController = async (req, res) => {
     },
     { where: { id: usuarioExistente.id } }
   );
+  
 
   const usuarioAtualizado = await usuario.findByPk(usuarioExistente.id);
 

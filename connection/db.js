@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 console.log(process.env.DATABASE_USERNAME_TESTE)
 
-
+// validação para saber em qual banco de dados a aplicação está conectada(bd de producao ou teste)
 if (process.env.ENVIRONMENT === 'debugrace') {
     console.log('debugrace_production')
     const sequelize = new Sequelize(

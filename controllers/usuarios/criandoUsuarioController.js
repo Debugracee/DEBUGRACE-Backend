@@ -2,9 +2,8 @@ const bcrypt = require("bcrypt");
 const criandoUsuarioController = async (req, res) => {
   const db = require("../../connection/db");
   const usuario = require("../../model/usuarios");
-  await db.sync({force: true});
+  await db.sync();
   const { nome, email, nascimento, genero, senha } = req.body;
-  // const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
   function checkEmail(email) {
     return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
       email
