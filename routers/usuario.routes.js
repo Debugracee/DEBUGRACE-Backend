@@ -10,7 +10,7 @@ const usuarioRoute = express.Router();
 
 usuarioRoute.post("/usuario", criandoUsuarioController);
 
-usuarioRoute.get('/status', statusLogadoController)
+usuarioRoute.post('/status', statusLogadoController)
 
 usuarioRoute.post("/login", logandoUsuarioController);
 
