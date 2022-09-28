@@ -55,7 +55,6 @@ const criandoUsuarioController = async (req, res) => {
     senha: senhaHash,
   });
 
-  // await usuario.save();
   return res
     .status(201)
     .json({ usuario: novoUsuario, msg: "usuario criado com sucesso :)" });
