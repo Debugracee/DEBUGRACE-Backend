@@ -44,6 +44,7 @@ const logandoUsuarioController = async (req, res) => {
     const token = jwt.sign(
       {
         id: usuarioAtualizado._id,
+        expiresIn: '2h'
       },
       secret
     );
