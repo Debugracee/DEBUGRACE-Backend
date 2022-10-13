@@ -26,7 +26,7 @@ const Trilhas = db.define('trilhas', {
         allowNull: false
     },
 
-    linkConteudo: {
+    pdfConteudo: {
         type: Sequelize.DataTypes.TEXT('long'),
         allowNull: false
     }

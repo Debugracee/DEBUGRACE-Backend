@@ -8,7 +8,7 @@ const deleteTrilhas = async (req, res) => {
     },
   });
 
-  return res.json({ msg: "trilha deletada", trilhaDeletada: deleteTrilha });
+  return res.json({ msg: "trilha deletada", trilhaDeletada: trilhas });
 };
 
 module.exports = deleteTrilhas;

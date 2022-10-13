@@ -1,14 +1,14 @@
 const putTrilha = async (req, res) => {
   let trilhas = require("../../model/trilhas");
   const id = req.params.id;
-  const { trilha, conteudo, descConteudo, linkConteudo } = req.body;
+  const { trilha, conteudo, descConteudo, pdfConteudo } = req.body;
   const trilhaCadastrada = await trilhas.findByPk(id);
   await trilhas.update(
     {
       trilha: trilha || trilhaCadastrada.trilha,
       conteudo: conteudo || trilhaCadastrada.conteudo,
       descConteudo: descConteudo || trilhaCadastrada.descConteudo,
-      linkConteudo: linkConteudo || trilhaCadastrada.linkConteudo,
+      linkConteudo: pdfConteudo || trilhaCadastrada.pdfConteudo,
     },
     { where: { id: id } }
   );
