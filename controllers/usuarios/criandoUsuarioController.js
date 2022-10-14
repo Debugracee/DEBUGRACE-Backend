@@ -43,7 +43,7 @@ const criandoUsuarioController = async (req, res) => {
   const usuarioExistente = await usuario.findOne({ where: { email: email } });
 
   if (usuarioExistente) {
-    return res.status(422).json({ erro: "Esse email ja está sendo usado" });
+    return res.status(422).json({ emailUsadoErro: "Esse email ja está sendo usado" });
   }
 
   

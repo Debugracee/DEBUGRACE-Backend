@@ -1,7 +1,7 @@
 const createTrilhas = async (req, res) => {
   const db = require("../../connection/db");
   const trilhas = require("../../model/trilhas");
-  await db.sync({force: true});
+  await db.sync();
   const { trilha, conteudo, descConteudo, pdfConteudo } = req.body;
   const novaTrilha = await trilhas.create({
     trilha,

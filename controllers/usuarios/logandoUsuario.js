@@ -6,11 +6,11 @@ const logandoUsuarioController = async (req, res) => {
   const { email, senha } = req.body;
 
   if (!email) {
-    return res.status(422).json({ erro: "É preciso de um email" });
+    return res.status(422).json({ erroEmail: "É preciso de um email" });
   }
 
   if (!senha) {
-    return res.status(422).json({ erro: "É preciso de uma senha" });
+    return res.status(422).json({ erroSenha: "É preciso de uma senha" });
   }
 
   const usuarioExistente = await usuario.findOne({ where: { email: email } });
@@ -22,7 +22,7 @@ const logandoUsuarioController = async (req, res) => {
   console.log(senha);
   console.log(buscarSenha);
   if (!buscarSenha) {
-    return res.status(402).json({ erro: "Coloque uma senha válida" });
+    return res.status(402).json({ senhaErrada: "Email ou senha estão incorretos" });
   }
 
   await usuario.update(

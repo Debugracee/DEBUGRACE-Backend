@@ -4,10 +4,12 @@ const alterandoUsuarioController = async (req, res) => {
   const id = req.params.id;
   const { nome, email, nascimento, genero, senha } = req.body;
   const usuarioArmazenado = await usuario.findByPk(id);
-  const senhaHash = await bcrypt.hash(senha, 8);
 
   // nao esquecer de fazer umas validacoes para nao dar problema com dados de outro usuario
   // cansativo ZZZZzzzzzzzzz
+  // const usuarioExistente = await usuario.findOne({ where: { email: email } });
+
+  const senhaHash = await bcrypt.hash(senha, 8);
   await usuario.update(
     {
       nome: nome || usuarioArmazenado.nome,
