@@ -1,4 +1,5 @@
 const express = require("express");
+const auth = require("../controllers/Middleware/auth");
 const alterandoUsuarioController = require("../controllers/usuarios/alterandoUsuarioController");
 const criandoUsuarioController = require("../controllers/usuarios/criandoUsuarioController");
 const deletandoUsuarioController = require("../controllers/usuarios/deletandoUsuarioController");
@@ -18,7 +19,7 @@ usuarioRoute.post("/deslog", deslogandoUsuario);
 
 usuarioRoute.get("/usuario", pegandoUsuarioController);
 
-usuarioRoute.put("/usuario/:id", alterandoUsuarioController);
+usuarioRoute.put("/usuario/:id", auth, alterandoUsuarioController);
 
 usuarioRoute.delete("/usuario/:id", deletandoUsuarioController);
 

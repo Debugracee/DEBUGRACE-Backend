@@ -11,10 +11,8 @@ const deslogandoUsuario = async (req, res) => {
         id: usuarioLogado.id,
         nome: usuarioLogado.nome,
         email: usuarioLogado.email,
-        nascimento: usuarioLogado.nascimento,
-        genero: usuarioLogado.genero,
         senha: usuarioLogado.senha,
-        statusLogin: false,
+        statusLogin: false
       },
       { where: { id: usuarioLogado.id } }
     );

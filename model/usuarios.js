@@ -17,14 +17,6 @@ const Usuario = db.define('usuarios', {
         type: Sequelize.DataTypes.STRING(90),
         allowNull: false
     },
-    nascimento: {
-        type: Sequelize.DataTypes.DATE,
-        allowNull: false
-    },
-    genero: {
-        type: Sequelize.DataTypes.STRING(45),
-        allowNull: false
-    },
     senha: {
         type: Sequelize.DataTypes.STRING,
         allowNull: false
