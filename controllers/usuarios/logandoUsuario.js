@@ -40,7 +40,6 @@ const logandoUsuarioController = async (req, res) => {
     const token = jwt.sign(
       {
         id: usuarioLogado._id,
-        expires_in: "2h",
       },
       secret
     );
