@@ -3,8 +3,8 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const sequelize = require("sequelize");
-const usuarioRoute = require("../routers/usuario.routes");
-const trilhasRoutes = require("../routers/trilhas.routes");
+const usuarioRoute = require("./routers/usuario.routes");
+const trilhasRoutes = require("./routers/trilhas.routes");
 const port =  process.env.DATABASE_PORT || 3500;
 
 app.use(cors());
