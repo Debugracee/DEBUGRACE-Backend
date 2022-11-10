@@ -50,6 +50,11 @@ const sequelize = new Sequelize(
     // port: process.env.DATABASE_PORT,
     protocol: "postgres",
     dialectOptions: {
+      ssl: {
+        require: true,
+        // Ref.: https://github.com/brianc/node-postgres/issues/2009
+        rejectUnauthorized: false,
+      },
       ssl: true,
       native: true,
     } 
