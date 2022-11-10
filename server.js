@@ -2,7 +2,7 @@ require("dotenv/config");
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const sequelize = require("sequelize");
+const sequelize = require("./connection/db");
 const usuarioRoute = require("./routers/usuario.routes");
 const trilhasRoutes = require("./routers/trilhas.routes");
 const port = 3500;
@@ -17,6 +17,10 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(usuarioRoute);
 app.use(trilhasRoutes);
+
+sequelize.sync().then(() => {
+  console.log('conectou com o banco')
+})
 
 app.get("/", (req, res) => {
   res.send(
