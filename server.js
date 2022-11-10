@@ -5,7 +5,7 @@ const app = express();
 const sequelize = require("sequelize");
 const usuarioRoute = require("./routers/usuario.routes");
 const trilhasRoutes = require("./routers/trilhas.routes");
-const port =  process.env.DATABASE_PORT || 3500;
+const port = process.env.DATABASE_PORT || 3500;
 
 app.use(cors());
 app.use((req, res, next) => {
@@ -19,8 +19,16 @@ app.use(usuarioRoute);
 app.use(trilhasRoutes);
 
 app.get("/", (req, res) => {
-  res.send('Sua api carregou, amou?' + 'e seu banco é:' + process.env.DATABASE_NAME)
-})
+  res.send(
+    "Sua api carregou, amou?" +
+      "e seu banco é:" +
+      process.env.DATABASE_NAME +
+      process.env.DATABASE_PORT +
+      process.env.DATABASE_USERNAME +
+      process.env.DATABASE_HOST +
+      process.env.DATABASE_PASSWORD
+  );
+});
 
 app.listen(port, () => {
   console.log(`Rodando na porta: ${port}`);

@@ -23,7 +23,6 @@ if (process.env.ENVIRONMENT === 'debugrace') {
         process.env.DATABASE_NAME_TESTE,
         process.env.DATABASE_USERNAME_TESTE,
         process.env.DATABASE_PASSWORD_TESTE,
-
         {
             dialect: "mysql",
             host: process.env.DATABASE_HOST_TESTE,
