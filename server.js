@@ -5,13 +5,13 @@ const app = express();
 const sequelize = require("sequelize");
 const usuarioRoute = require("./routers/usuario.routes");
 const trilhasRoutes = require("./routers/trilhas.routes");
-const port = process.env.DATABASE_PORT || 3500;
+const port = 3500;
 
 app.use(cors());
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
-  res.header("Access-Control-Allow-Headers", "Content-Type,Authorization");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
   next();
 });
 app.use(express.json());
