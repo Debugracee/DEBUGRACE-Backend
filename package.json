@@ -8,7 +8,6 @@
   },
   "scripts": {
     "start": "node server.js",
-    "build": "slide ons ide",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
