@@ -36,7 +36,7 @@ const criandoUsuarioController = async (req, res) => {
   if (usuarioExistente) {
     return res
       .status(422)
-      .json({ emailUsadoErro: "Esse email ja está sendo usado" });
+      .json({ erro: "Esse email ja está sendo usado" });
   }
 
   const novoUsuario = await usuario.create({
@@ -45,9 +45,14 @@ const criandoUsuarioController = async (req, res) => {
     senha: senhaHash,
   });
 
-  return res
-    .status(201)
-    .json({ usuario: novoUsuario, msg: "usuario criado com sucesso :)" });
+  try {
+    return res
+      .status(201)
+      .json({ usuario: novoUsuario, msg: "Suas informações foram cadastradas" });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ msg: "error" });
+  }
 };
 
 module.exports = criandoUsuarioController;

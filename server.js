@@ -19,19 +19,7 @@ app.use(usuarioRoute);
 app.use(trilhasRoutes);
 
 sequelize.sync().then(() => {
-  console.log('conectou com o banco')
-})
-
-app.get("/", (req, res) => {
-  res.send(
-    "Sua api carregou, amou?" +
-      "e seu banco é:" +
-      process.env.DATABASE_NAME +
-      process.env.DATABASE_PORT +
-      process.env.DATABASE_USERNAME +
-      process.env.DATABASE_HOST +
-      process.env.DATABASE_PASSWORD
-  );
+  console.log("conectou com o banco");
 });
 
 app.listen(port, () => {

@@ -46,10 +46,10 @@ const logandoUsuarioController = async (req, res) => {
 
     return res
       .status(201)
-      .json({ msg: "logado!", usuario: usuarioLogado, token });
+      .json({ msg: "Você está logado", usuario: usuarioLogado, token });
   } catch (error) {
     console.log(error);
-    return res.status(500).json({ msg: "error" });
+    return res.status(500).json({ msg: "Não foi possível completar esta ação - Serve ERROR" });
   }
 };
 
